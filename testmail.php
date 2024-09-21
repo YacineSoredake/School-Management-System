@@ -51,8 +51,8 @@ if (isset($_POST['sendWithPHPMailer'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com'; // Votre hôte SMTP
                 $mail->SMTPAuth = true;
-                $mail->Username = 'blahayacine9@gmail.com'; // Votre nom d'utilisateur SMTP
-                $mail->Password = 'mkyfnsxyiceskhum'; // Votre mot de passe SMTP
+                $mail->Username = ''; // Votre nom d'utilisateur SMTP
+                $mail->Password = ''; // Votre mot de passe SMTP
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
 
