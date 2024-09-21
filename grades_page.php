@@ -173,14 +173,14 @@ if (isset($_POST['sendToprof'])) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com'; // Votre hôte SMTP
             $mail->SMTPAuth = true;
-            $mail->Username = 'blahayacine9@gmail.com'; // Votre nom d'utilisateur SMTP
-            $mail->Password = 'mkyfnsxyiceskhum'; // Votre mot de passe SMTP
+            $mail->Username = ''; // Votre nom d'utilisateur SMTP
+            $mail->Password = ''; // Votre mot de passe SMTP
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
             // Destinataires
-            $mail->setFrom('blahayacine9@gmail.com', 'blaha');
-            $mail->addAddress('fantatchina31@gmail.com', 'yacine'); // Recipient email and 
+            $mail->setFrom('', '');
+            $mail->addAddress('', ''); // Recipient email and 
             // Content
             $mail->isHTML(true);
             $mail->Subject = 'Bulletin of Etudiant';
