@@ -57,7 +57,7 @@ if (isset($_POST['sendWithPHPMailer'])) {
                 $mail->Port = 587;
 
                 // Destinataires
-                $mail->setFrom('blahayacine9@gmail.com', 'blaha'); // Votre e-mail et votre nom
+                $mail->setFrom('', ''); // Votre e-mail et votre nom
                 $mail->addAddress($recipientEmail, 'Destinataire'); // E-mail et nom du destinataire
 
                 // Contenu
