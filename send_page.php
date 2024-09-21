@@ -61,8 +61,8 @@ GROUP BY
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('fantatchina31@gmail.com', 'blaha'); // Your email and name
-        $mail->addAddress('blahayacine9@gmail.com', 'yacine'); // Re
+        $mail->setFrom('', ''); // Your email and name
+        $mail->addAddress('', ''); // Re
         $mail->isHTML(true);
 
         // Subject and body of the email
