@@ -56,8 +56,8 @@ GROUP BY
         $mail->isSMTP();
         $mail->Host = 'your_smtp_host';
         $mail->SMTPAuth = true;
-        $mail->Username = 'fantatchina31@gmail.com'; // Your SMTP username
-        $mail->Password = 'ywddedoslqxflksf'; // Your SMTP password
+        $mail->Username = ''; // Your SMTP username
+        $mail->Password = ''; // Your SMTP password
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
