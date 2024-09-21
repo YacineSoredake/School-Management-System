@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-size: cover;
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .border {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .email-section,
+    .pass-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .nana,
+    .nana2,
+    .nana3 {
+      margin-right: 10px;
+    }
+
+    .email-icon,
+    .pass-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .container-input {
+      flex: 1;
+    }
+
+    .input-dd,
+    .liste-role {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .buttonda {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .buttonda:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <form class="border" action="get_user.php" method="post">
+    <div class="section">
+      <p class="title">INSCRIPTION</p>
+      <div class="email-section">
+        <div class="nana">
+          
+          <p>Email</p>
+        </div>
+        <div class="container-input">
+          <input name="email" class="input-dd" type="email" required />
+        </div>
+      </div>
+      <div class="pass-section">
+        <div class="nana2">
+          
+          <p>Password</p>
+        </div>
+        <div div class="container-input">
+          <input name="mdp" class="input-dd" type="password" required />
+        </div>
+      </div>
+      <div class="pass-section">
+        <div class="nana3">
+         
+          <p>Role</p>
+        </div>
+        <div div class="container-input">
+          <select class="liste-role" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <button type="submit" name="enregistrer" class="buttonda">S'inscrire </button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,131 @@
+p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: rgb(255, 255, 255);
+}
+.title{
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-fill-color:transparent ;
+    font-size: 45px;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+.section{
+    background-color: rgba(0, 0, 0, 0.466);
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 450px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: thistle;
+    align-items: center;
+    justify-content: center;
+}
+.border{
+    position: absolute;
+    left: 500px;
+    top: 160px;
+    }
+.email-section,.pass-section{
+
+    display: flex;
+    flex-direction: column;
+    column-gap: 7px;
+    align-items: start;
+    justify-content: center;
+    
+}
+.check{
+    display: flex;
+    column-gap: 7px;
+    align-items: center;
+    justify-content: center;
+
+}
+.email-icon,.pass-icon{
+    height: 20px;
+}
+.input-dd{
+    font-size: 14px;
+    height: 35px;
+    width: 250px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: aliceblue;
+    background-color: rgba(40, 40, 40, 0.518);
+    color: rgb(255, 255, 255);
+}
+.nana{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.nana3{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.nana2{
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+.section:hover .nana{
+        margin-left: 70px;
+       
+        transition: 400ms;
+    }
+.section:hover .nana2{
+        margin-left: 60px;
+       
+        transition: 400ms;
+    }
+.section:hover .title{
+        font-size: 50px;
+        transition: 300ms;
+        -webkit-text-stroke-color: rgb(206, 202, 206);
+    }
+.section:hover .buttonda{
+        margin-top: 40px;
+        transition: 400ms;
+    }
+.buttonda{
+        margin-top: 10px;
+        background-color: transparent;
+        color: aliceblue;
+        border-color: aliceblue;
+        border-style: solid;
+        border-width: 1px;
+        height: 25px;
+        border-radius: 5px;
+    }
+.liste-role{
+    background-color: rgba(40, 40, 40, 0.518);
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100px;
+   color: white;
+    padding: 5px 5px;
+    font-size:18px;
+}    
+.message{
+    padding: 2px 5px;
+    border: 1px solid white;
+    border-radius: 2px;
+    margin-top: 8px;
+    background-color:rgba(255, 0, 0, 0.456) ;
+    color: rgb(255, 255, 255);
+}
+.Show{
+    margin-left: 5px;
+    height: 25px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+.container-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

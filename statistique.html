@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Style for the chart containers */
+        div {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+        .conter{
+            width: 700px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        canvas{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Chart containers -->
+<div class="conter">
+    <canvas id="genderHistogram" width="60" height="60"></canvas>
+    <canvas id="genderPieChart" width="60" height="30"></canvas>
+</div>
+
+<script>
+    displayStatistics();
+
+    function displayStatistics() {
+    // Fetch gender data from the server (replace with your actual endpoint)
+    fetch('adminuser.php')
+        .then(response => response.json())
+        .then(data => {
+
+            // Create histogram
+            var ctxHistogram = document.getElementById('genderHistogram').getContext('2d');
+            new Chart(ctxHistogram, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.datasets[0].data,
+                        backgroundColor: ['lightblue', 'pink'], // Set colors here
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Create pie chart
+            var ctxPieChart = document.getElementById('genderPieChart').getContext('2d');
+            new Chart(ctxPieChart, {
+                type: 'pie',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.datasets[0].data,
+                        backgroundColor: ['lightblue', 'lightpink'], // Set colors here
+                    }]
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching gender data:', error));
+}
+
+</script>
+
+</body>
+</html>

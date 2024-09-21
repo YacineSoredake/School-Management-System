@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs</title>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    div {
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    .conter{
+        width: 700px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    canvas{
+        margin-right: 20px;
+    }
+</style>
+<body>
+
+<h1>Graphs</h1>
+
+<div class="conter">
+<canvas id="histogramChart" width="60" height="60"></canvas>
+
+<!-- Pie Chart -->
+<canvas id="pieChart" width="60" height="30"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Fetch data from PHP script
+    fetch('moy.php')
+        .then(response => response.json())
+        .then(data => {
+            // Extract data for histogram and pie chart
+            var histogramData = data.histogramData;
+            var pieChartData = data.pieChartData;
+
+            // Get the context of the canvas elements
+            var histogramCtx = document.getElementById('histogramChart').getContext('2d');
+            var pieChartCtx = document.getElementById('pieChart').getContext('2d');
+
+            // Create Histogram Chart
+            var histogramChart = new Chart(histogramCtx, {
+                type: 'bar',
+                data: histogramData,
+                
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Create Pie Chart
+            var pieChart = new Chart(pieChartCtx, {
+                type: 'pie',
+                data: pieChartData,
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});
+</script>
+
+</body>
+</html>
